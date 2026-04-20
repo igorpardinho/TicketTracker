@@ -1,0 +1,12 @@
+services:
+  db:
+    image: mariadb:latest
+    container_name: ticket-tracker-db
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: root
+      MARIADB_DATABASE: TicketTrackerDB
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./mysql_data:/var/lib/mysql
